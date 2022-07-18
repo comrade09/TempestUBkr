@@ -77,7 +77,7 @@ and get its bot token
 
 <b>1. Deploy on Heroku</b>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/https://github.com/TempestNetwork/TempestUB)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ---
 
