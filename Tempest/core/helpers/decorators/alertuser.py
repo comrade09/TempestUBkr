@@ -1,4 +1,4 @@
-rom pyrogram.types import CallbackQuery
+from pyrogram.types import CallbackQuery
 from pyrogram.errors import MessageNotModified
 
 
