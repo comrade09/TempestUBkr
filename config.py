@@ -97,7 +97,7 @@ class Config(Inside): # pylint: disable=too-few-public-methods
         TOKEN = os.getenv("TOKEN")
 # ---------------------
     # thumbnail used while uploading plugins, etc. (optional)
-    THUMB_PIC = os.getenv("THUMB_PIC", "./main/core/resources/images/tempest-square.png")
+    THUMB_PIC = os.getenv("THUMB_PIC", "./Tempest/core/resources/images/tempest-square.png")
 # ---------------------
     # your telegraph account name (default: Tempestuserbot)
     TL_NAME = os.getenv("TL_NAME", "Tempest UserBot")
