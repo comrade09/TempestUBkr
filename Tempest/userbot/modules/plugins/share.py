@@ -37,7 +37,7 @@ async def sendmodule_handler(app, m: Message):
                 thumb_pic = app.getdv("THUMB_PIC")
             elif app.THUMB_PIC:
                 thumb_pic = app.THUMB_PIC
-                else:
+            else:
                 thumb_pic = None
 
             start = time.time()
