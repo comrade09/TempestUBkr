@@ -120,6 +120,6 @@ if shell("uname -n") in ("localhost"):
         from termuxconfig import TermuxConfig
 
 
-from main.userbot.client import app
+from Tempest.userbot.client import app
 bot = app.bot
-from main.core.filters import gen, regex
+from Tempest.core.filters import gen, regex
