@@ -27,7 +27,7 @@ app.CMD_HELP.update(
 
 
 
-TRON_REPO = app.UPSTREAM_REPO
+TEMPEST_REPO = app.UPSTREAM_REPO
 
 
 async def gen_chlog():
