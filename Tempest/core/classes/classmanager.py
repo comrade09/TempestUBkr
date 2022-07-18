@@ -6,9 +6,9 @@ import pyrogram
 from config import Config
 from telegraph import Telegraph
 from pyrogram import __version__ as pyrogram_version
-from main.core.database import Database
-from main.core.helpers import Helpers
-from main.core.newpyrogram import Methods
+from Tempest.core.database import Database
+from Tempest.core.helpers import Helpers
+from Tempest.core.newpyrogram import Methods
 
 
 
