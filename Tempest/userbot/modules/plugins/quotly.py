@@ -21,16 +21,16 @@ app.CMD_HELP.update(
 
 @app.on_message(gen(["q"], exclude = ["sudo", "channel"]))
 async def quotly_handler(_, m: Message):
-     try:
+    try:
         reply = m.reply_to_message
         if not reply:
             return await app.send_edit(m, "Reply to any users text message", delme=4)
-
+    
         if app.long() > 1:
             color = m.text.split(None, 1)[1]
         else:
             color = "black"
-
+    
         msg_one = await app.send_edit("Making a Quote . . .", text_type=["mono"])
         await app.send_message("QuotLyBot", f"/qcolor {color}")
         await reply.forward("QuotLyBot")
