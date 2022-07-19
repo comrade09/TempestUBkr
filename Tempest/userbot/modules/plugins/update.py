@@ -74,6 +74,7 @@ async def install_requirements():
 async def update_handler(_, m):
     try:
         cmd = False
+        text = m.text.split(None, 1)
         errtext = "Some problem occurred:\n\n"
         await app.send_edit("Checking for updates, please wait . . .", text_type=["mono"])
 
