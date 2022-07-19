@@ -56,7 +56,7 @@ async def delete_helpdex(_, cb: CallbackQuery):
 
 
 @app.on_message(gen("help", exclude =["sudo"]))
-async def helpdex_handler(_, m: Message):
+async def helpmenu_handler(_, m: Message):
     args = m.command if app.long() > 1 else False
 
     try:
@@ -85,7 +85,7 @@ async def helpdex_handler(_, m: Message):
 
             module_help = await app.PluginData(args[1])
             if not module_help:
-                await app.send_edit(f"Invalid module name specified, use `{app.Trigger}mods` to get list of modules", delme=3)
+                await app.send_edit(f"Invalid module name specified, use `{app.Trigger()[0]}mods` to get list of modules", delme=3)
             else:
                 await app.send_edit(f"**MODULE:** {args[1]}\n\n" + "".join(module_help))
         else:
@@ -101,10 +101,10 @@ async def helpdex_handler(_, m: Message):
 
 # get all module name
 @app.on_message(gen("mods", exclude =["sudo"]))
-async def allmodules_handler(_, m: Message):
+async def uplugs_handler(_, m: Message):
     store = []
     store.clear()
-    for x in os.listdir("userbot/modules/"):
+    for x in os.listdir("Tempest/userbot/modules/plugins"):
         if not x in ["__pycache__", "__init__.py"]:
             store.append(x + "\n")
 
@@ -115,10 +115,10 @@ async def allmodules_handler(_, m: Message):
 
 # get all plugins name
 @app.on_message(gen("plugs", exclude =["sudo"]))
-async def allplugins_handler(_, m: Message):
+async def aplugs_handler(_, m: Message):
     store = []
     store.clear()
-    for x in os.listdir("userbot/plugins/"):
+    for x in os.listdir("Tempest/assistant/modules/plugins/"):
         if not x in ["__pycache__", "__init__.py"]:
             store.append(x + "\n")
 
