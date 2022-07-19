@@ -85,7 +85,7 @@ async def helpdex_handler(_, m: Message):
 
             module_help = await app.PluginData(args[1])
             if not module_help:
-                await app.send_edit(f"Invalid module name specified, use `{app.PREFIX}mods` to get list of modules", delme=3)
+                await app.send_edit(f"Invalid module name specified, use `{app.Trigger}mods` to get list of modules", delme=3)
             else:
                 await app.send_edit(f"**MODULE:** {args[1]}\n\n" + "".join(module_help))
         else:
