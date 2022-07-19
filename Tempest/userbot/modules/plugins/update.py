@@ -34,7 +34,7 @@ TEMPEST_REPO = app.UPSTREAM_REPO
 async def gen_chlog():
     changes = []
     last_updated = int(re.sub(r"[- + : \s]", "", str(app.heroku_app().updated_at))[:14])
-    recent_updates = app.GetRequest("https://api.github.com/repos/TempestNetwork/TempestUB/events")
+    recent_updates = await app.GetRequest("https://api.github.com/repos/TempestNetwork/TempestUB/events")
 
     for x in recent_updates:
         if x.get("payload").get("commits") is not None and int(x.get("created_at").replace("-", "").replace(":", "").replace("T", "").replace("Z", "")) > last_updated:
