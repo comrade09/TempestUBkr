@@ -122,7 +122,7 @@ async def banall_handler(_, m: Message):
             return await app.send_edit("Use '`confirm`' text after command to ban all members.", text_type=["mono"], delme=4)
 
         elif app.long() > 1 and m.command[1] == "confirm":
-            async for x in app.iter_chat_members(m.chat.id):
+            async for x in app.get_chat_members(m.chat.id):
                 if x.status == "member":
                     await app.ban_chat_member(m.chat.id, x.user.id)
                     count += 1
