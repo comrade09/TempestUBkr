@@ -127,7 +127,7 @@ async def inviteall_handler(_, m):
 
     count = 0
 
-    if app.long(m) == 1:
+    if app.long() == 1:
         return await app.send_edit("Give me a group id or username", text_type=["mono"])
 
     elif app.long() > 1:
