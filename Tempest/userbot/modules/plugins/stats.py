@@ -4,11 +4,13 @@ from pyrogram.enums import ChatType
 
 
 
+
+
 app.CMD_HELP.update(
     {"stats": (
         "stats",
         {
-        "stats" : "Get information about how many groups/channels/users you have."
+        "stats" : "Get information about how many groups/channels/users you have in your dialogs."
         }
         )
     }
@@ -27,7 +29,6 @@ async def dialogstats_handler(_, m: Message):
         channel = 0
         stats_format = """
         • **STATS FOR:** {}
-
         🤖 • **BOTS:** {}
         👨 • **USERS:** {}
         🛡️ • **GROUPS:** {}
@@ -35,13 +36,13 @@ async def dialogstats_handler(_, m: Message):
         """
 
         async for x in app.get_dialogs():
-            if x.chat.type == "ChatType.CHANNEL":
+            if x.chat.type == ChatType.CHANNEL:
                 channel += 1
-            if x.chat.type == "ChatType.BOT":
+            if x.chat.type == ChatType.BOT:
                 bot += 1
-            if x.chat.type in ("ChatType.SUPERGROUP", "ChatType.GROUP"):
+            if x.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
                 group += 1
-            if x.chat.type == "ChatType.PRIVATE":
+            if x.chat.type == ChatType.PRIVATE:
                 user += 1
 
         await app.send_edit(stats_format.format(app.UserMention(), bot, user, group, channel))
