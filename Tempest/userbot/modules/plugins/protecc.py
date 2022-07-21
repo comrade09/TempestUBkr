@@ -14,7 +14,7 @@ app.CMD_HELP.update(
     {"protecc" : (
         "protecc",
         {
-        "protecc [reply]" : "automatically protect waifus/husbandos in your channels.",
+        "protecc [reply]" : "automatically protect waifus in your channels.",
         }
         )
     }
@@ -69,7 +69,10 @@ async def imagesauce_handler(_, m: Message):
         # get results in text
         text = requests.get(getUrl, headers=headers).text
         soup = BeautifulSoup(text, "html.parser")
-        find = soup.find_all("div", {"class":"r5a77d"})[0]
+        try:
+            find = soup.find_all("div", {"class":"r5a77d"})[0]
+        except IndexError:
+            return await app.send_edit("`No Results found !`", delme=3)
         textResults = find.text.split(":")[-1]
 
         await app.send_edit("/protecc {}".format(textResults), disable_web_page_preview = True)
