@@ -1,4 +1,3 @@
-
 import random
 import shutil
 import urllib
@@ -34,7 +33,6 @@ headers = {
 
 
 
-
 @app.on_message(gen("sauce", exclude =["sudo"]))
 async def imagesauce_handler(_, m: Message):
     try:
@@ -65,9 +63,10 @@ async def imagesauce_handler(_, m: Message):
         else:
             return await app.send_edit("Only photo & animation media's are supported.", text_type=["mono"], delme=4)
 
+        # get url
         searchUrl = 'http://www.google.co.id/searchbyimage/upload'
         filePath = './downloads/{}'.format(savename)
-         multiPart = {'encoded_image': (filePath, open(filePath, 'rb')), 'image_content': ''}
+        multiPart = {'encoded_image': (filePath, open(filePath, 'rb')), 'image_content': ''}
         response = requests.post(searchUrl, files=multiPart, headers=headers)
         getUrl = response.url
 
@@ -126,7 +125,7 @@ async def imagesearch_handler(_, m: Message):
 
     try:
         await app.send_edit(f"**Getting images:** `{query}`")
-        ing_downloader.download(
+        bing_downloader.download(
             query,
             limit=limit,
             output_dir="images",
@@ -150,5 +149,3 @@ async def imagesearch_handler(_, m: Message):
 
     except Exception as e:
         await app.error(e)
-
-
