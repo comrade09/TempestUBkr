@@ -22,11 +22,11 @@ class ClassManager(Config, Helpers, Database, Methods):
 
     # assistant /
     assistant_name = "Shion"
-    assistant_version = "v.0.0.1"
+    assistant_version = "v.1.0.0"
 
     # userbot /
     userbot_name = "Tempest UB"
-    userbot_version = "v.0.0.1"
+    userbot_version = "v.1.0.0"
 
     # containers /
     CMD_HELP = {}
