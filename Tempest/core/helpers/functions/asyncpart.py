@@ -237,7 +237,7 @@ class AsyncPart(object):
 
         teks = "**Traceback Report:**\n\n"
         teks += f"**Date:** `{self.showdate()}`\n**Time:** `{self.showtime()}`\n\n"
-        teks += "`This can be a error in TempestUserBot, if you want you can forward this to @TempestSupports.`\n\n"
+        teks += "`This can be a error in Tempest Userbot, if you want you can forward this to @TempestSupports.`\n\n"
         teks += f"**Command:** `{self.m.text}`\n\n"
         teks += "`-`" * 30 + "\n\n"
         teks += f"**SHORT:** \n\n`{e}`\n\n"
@@ -395,6 +395,13 @@ class AsyncPart(object):
                 is_self = True
             else:
                 is_self = False
+
+            if len(text) > 4096:
+                return await self.send_edit(
+                    "Message text is too long.",
+                    text_type=["mono"],
+                    delme=3
+                )
 
             if is_self:
                 msg = await self.m.edit(
