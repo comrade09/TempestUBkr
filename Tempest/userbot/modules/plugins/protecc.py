@@ -29,7 +29,7 @@ headers = {
 
 
 
-@app.on_message(gen("protecc", exclude =["sudo"]))
+@app.on_message(gen("pp", exclude =["sudo"]))
 async def imagesauce_handler(_, m: Message):
     try:
         reply = m.reply_to_message
