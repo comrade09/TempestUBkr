@@ -1,3 +1,5 @@
+""" userbot client module """
+
 import random
 import string
 from pyrogram import Client
@@ -7,11 +9,11 @@ from Tempest.core import Core
 
 
 # temp -
-random_name =  ''.join(random.choices(string.ascii_uppercase + string.digits, k = 7))
+random_name =  "".join(random.choices(string.ascii_uppercase + string.digits, k = 7))
 
 
 class SuperClient(Core, Client):
-    """ Userbot (Tempest) """
+    """ Userbot (tempest) """
     def __init__(self):
         super().__init__(
             name=random_name,
@@ -24,7 +26,9 @@ class SuperClient(Core, Client):
         self.me = self.get_chat("me")
         self.id = self.me.id
         self.dc_id = self.me.dc_id
-        self.name = self.me.first_name
+        self.first_name = self.me.first_name
+        self.last_name = self.me.last_name if self.me.last_name else ""
+        self.name = self.first_name + " " + self.last_name
         self.username = f"@{self.me.username}" if self.me.username else ""
         self.bio = self.me.bio if self.me.bio else ""
         self.pic = self.download_media(self.me.photo.big_file_id) if self.me.photo else None
