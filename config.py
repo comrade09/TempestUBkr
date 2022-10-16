@@ -63,7 +63,7 @@ class Config(Inside): # pylint: disable=too-few-public-methods
     # add True to enable (default: False)
     PMPERMIT = os.getenv("PMPERMIT", None)
     # pmpermit pic (optional)
-    PMPERMIT_PIC = os.getenv("PMPERMIT_PIC", "https://telegra.ph/file/c6bcd58ca98354432abab.jpg")
+    PMPERMIT_PIC = os.getenv("PMPERMIT_PIC", "https://telegra.ph/file/3711f838712dfcf062f6f.jpg")
     # custom  pmpermit security text (optional)
     PMPERMIT_TEXT = os.getenv("PMPERMIT_TEXT", _PMPERMIT_TEXT)
     # pmpermit warn limit (optional)
