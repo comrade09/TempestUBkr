@@ -15,9 +15,9 @@ if platform.uname()[1] in ("localhost"):
 
 
 _PMPERMIT_TEXT = """
-Hey ! This is [Tempest Userbot](https://t.me/tempestSupports) Security System.
+Hey ! This is [Atharva 's](https://t.me/tpx_bots) Userbot Security System.
 **You will be blocked if you spammed my owner's pm**
-Currently My Owner is busy ! So Wait Until He Arrives. 
+Currently Atharva is busy ! So Wait Until He Arrives. 
 And Better Not To Spam Here !
 """
 
@@ -65,10 +65,7 @@ class Config(Inside): # pylint: disable=too-few-public-methods
     # pmpermit pic (optional)
     PMPERMIT_PIC = os.getenv("PMPERMIT_PIC", "https://telegra.ph/file/ff005aadf61ba3fe4670c.jpg ")
     # custom  pmpermit security text (optional)
-    PMPERMIT_TEXT = os.getenv("Hey ! This is Atharva 's  Userbot for  Security .
-You will be blocked if you spammed my owner's pm
-Currently My Owner is busy ! So Wait Until He Arrives. 
-And Better Not To Spam Here ! ", _PMPERMIT_TEXT)
+    PMPERMIT_TEXT = os.getenv("_PMPERMIT_TEXT", _PMPERMIT_TEXT)
     # pmpermit warn limit (optional)
     PM_LIMIT = int(os.getenv("PM_LIMIT", "5"))
     # this is used to get your accurate time
