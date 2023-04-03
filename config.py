@@ -15,7 +15,7 @@ if platform.uname()[1] in ("localhost"):
 
 
 _PMPERMIT_TEXT = """
-Hey ! This is [Atharva 's](https://t.me/tpx_bots) Userbot Security System.
+Hey ! This is Atharva's Userbot Security System.
 **You will be blocked if you spammed my owner's pm**
 Currently Atharva is busy ! So Wait Until He Arrives. 
 And Better Not To Spam Here !
@@ -63,7 +63,7 @@ class Config(Inside): # pylint: disable=too-few-public-methods
     # add True to enable (default: False)
     PMPERMIT = os.getenv("PMPERMIT", None)
     # pmpermit pic (optional)
-    PMPERMIT_PIC = os.getenv("PMPERMIT_PIC", "https://telegra.ph/file/ff005aadf61ba3fe4670c.jpg ")
+    PMPERMIT_PIC = os.getenv("PMPERMIT_PIC", "https://telegra.ph/file/ff005aadf61ba3fe4670c.jpg")
     # custom  pmpermit security text (optional)
     PMPERMIT_TEXT = os.getenv("_PMPERMIT_TEXT", _PMPERMIT_TEXT)
     # pmpermit warn limit (optional)
