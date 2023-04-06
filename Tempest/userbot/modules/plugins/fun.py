@@ -224,7 +224,7 @@ async def moviequote_handler(_, m):
 async def joke_handler(_, m):
     try:
         await app.send_edit("Finding a joke . . .", text_type=["mono"])
-        data = (await app.GetRequest("https://icanhazdadjoke.com/slack"))["attachments"][0]["fallback"]
+        data = (await app.GetRequest("https://api.chucknorris.io/jokes/random"))["attachments"][0]["fallback"]
         if not data:
             return app.send_edit("Site is down, please try again later . . .", delme=3, text_type=["mono"])
         elif data:
